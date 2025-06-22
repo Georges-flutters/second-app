@@ -73,8 +73,11 @@ class FirstPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        
-                        builder: (context) =>  SeconPage(RunSocial: SocialMedia.values.toList()[index].toString()),
+                        builder:
+                            (context) => SeconPage(
+                              RunSocial:
+                                  SocialMedia.values.toList()[index].toString(),
+                            ),
                       ),
                     );
                   },
