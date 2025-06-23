@@ -38,12 +38,6 @@ dependencies:
   url_launcher: ^6.3.1
   flutter_native_splash: ^2.4.6
 
-flutter_native_splash:
-  android: true
-  ios: true
-  background_image: assets/social-media.png
-
-
 flutter_launcher_icons:
   android: true
   ios: true

@@ -70,15 +70,41 @@ class FirstPage extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder:
-                            (context) => SeconPage(
-                              RunSocial:
-                                  SocialMedia.values.toList()[index].toString(),
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder:
+                    //         (context) => SeconPage(
+                    //           RunSocial:
+                    //               SocialMedia.values.toList()[index].toString(),
+                    //         ),
+                    //   ),
+                    // );
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder:
+                          (context) => SizedBox(
+                            height:
+                                MediaQuery.of(context).size.height *
+                                0.10, // 75%
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: WidgetStateProperty.all(
+                                  Colors.deepOrange,
+                                ),
+                              ),
+                              onPressed: () {
+                                launchUrl(
+                                  Uri.parse(SocialMedia.values.toList()[index]),
+                                );
+                              },
+                              child: Text(
+                                "start social media icon ",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                      ),
+                          ),
                     );
                   },
                 );
