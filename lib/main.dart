@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/First-Page.dart';
+import 'package:flutter_application/provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: FirstPage());
+    return ChangeNotifierProvider(
+      create: (context) => Providers(),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: FirstPage()),
+    );
   }
 }
-
